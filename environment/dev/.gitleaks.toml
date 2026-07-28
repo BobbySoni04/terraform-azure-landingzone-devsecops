@@ -1,0 +1,36 @@
+title = "Custom Gitleaks Rules"
+
+[[rules]]
+id = "terraform-hardcoded-password"
+description = "Detect hardcoded passwords in Terraform"
+regex = '''(?i)(admin_password|password|admin_pass|root_password)\s*=\s*"[^"]+"'''
+secretGroup = 0
+tags = ["terraform", "password", "hardcoded"]
+
+[[rules]]
+id = "terraform-client-secret"
+description = "Detect Azure Client Secret"
+regex = '''(?i)(client_secret)\s*=\s*"[^"]+"'''
+secretGroup = 0
+tags = ["terraform", "azure"]
+
+[[rules]]
+id = "terraform-storage-key"
+description = "Detect Azure Storage Account Key"
+regex = '''(?i)(storage_account_key|primary_access_key)\s*=\s*"[^"]+"'''
+secretGroup = 0
+tags = ["terraform", "azure"]
+
+[[rules]]
+id = "terraform-connection-string"
+description = "Detect Connection Strings"
+regex = '''(?i)(connection_string)\s*=\s*"[^"]+"'''
+secretGroup = 0
+tags = ["terraform"]
+
+[[rules]]
+id = "terraform-api-key"
+description = "Detect API Keys"
+regex = '''(?i)(api_key|apikey|access_key)\s*=\s*"[^"]+"'''
+secretGroup = 0
+tags = ["terraform", "api"]
